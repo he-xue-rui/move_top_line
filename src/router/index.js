@@ -76,6 +76,7 @@ router.beforeEach((to, from, next) => {
   const { user } = store.state
   if (!user.token && to.path.startsWith('/user')) {
     // 现实登录后回跳  把当前想访问的地址传递给登录页面
+    console.log(to.path)
     return next({ path: '/login', query: { redirectUrl: to.path } })
   }
   next()

@@ -70,8 +70,8 @@ export default {
     // 登录时候  整体校验
     async login () {
       // 对表单进行整体校验
-      this.checkMobile()
-      this.checkCode()
+      this.validMobile()
+      this.validCode()
       // 判断是否校验成功
       // 当errorMsg对象中mobile 和 code 没有值
       if (!this.errorMsg.mobile && !this.errorMsg.code) {

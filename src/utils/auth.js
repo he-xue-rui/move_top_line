@@ -2,15 +2,16 @@ const userToken = 'user_token'
 
 export const setStorage = (token) => {
   // 设置token_Storage
-  window.localStorage.setItem(userToken, token || {})
+  console.log(token)
+  return window.localStorage.setItem(userToken, JSON.stringify(token) || {})
 }
 
 export const getStorage = () => {
   // 获取token_Storage
-  window.localStorage.getItem(userToken)
+  return JSON.parse(window.localStorage.getItem(userToken))
 }
 
 export const delStorage = () => {
   // 删除token_Storage
-  window.localStorage.removeItem(userToken)
+  return window.localStorage.removeItem(userToken)
 }
